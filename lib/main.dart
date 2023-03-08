@@ -58,9 +58,15 @@ class Card extends StatefulWidget {
 }
 
 class _CardState extends State<Card> {
+  int nivel = 0;
+  void incrementaNivel() {
+    setState(() {
+      nivel++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    int nivel = 0;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -97,9 +103,7 @@ class _CardState extends State<Card> {
                           ),
                         ),
                         ElevatedButton(
-                          onPressed: () {
-                            nivel++;
-                          },
+                          onPressed:incrementaNivel,
                           child: const Icon(
                             Icons.arrow_drop_up_rounded,
                             color: Color.fromARGB(255, 113, 201, 206),
